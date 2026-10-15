@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1. HTML5 Validation | Assignment 4</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Forms &amp; Validation</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="task0-contact.html">Task 0</a></li><li class="nav-item"><a class="nav-link active" href="task1-validation.html">Task 1</a></li><li class="nav-item"><a class="nav-link" href="task2-bootstrap.html">Task 2</a></li><li class="nav-item"><a class="nav-link" href="task3-feedback.html">Task 3</a></li><li class="nav-item"><a class="nav-link" href="task4-registration.html">Task 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Task 1. HTML5 Validation</h1>
+      <p>Built-in browser validation: required, type, maxlength, pattern</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="form-card">
+          <h3 class="mb-3">Form with HTML5 Validation</h3>
+          <form class="plain-form" action="#" method="post">
+            <label for="name">Name (required, 2-30 characters)</label>
+            <input type="text" id="name" name="name" required minlength="2" maxlength="30">
+
+            <label for="email">Email (required, email format)</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone (pattern: +7XXXXXXXXXX)</label>
+            <input type="tel" id="phone" name="phone" pattern="\+7[0-9]{10}" placeholder="+77011234567" title="Format: +7 and 10 digits">
+
+            <label for="age">Age (number from 16 to 100)</label>
+            <input type="number" id="age" name="age" min="16" max="100" required>
+
+            <label for="message">Message (required, max 200 characters)</label>
+            <textarea id="message" name="message" rows="4" required maxlength="200"></textarea>
+
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <div class="form-card">
+          <h5>How to test</h5>
+          <ul class="mb-0">
+            <li>Press <b>Send</b> with empty fields: the browser shows "Please fill out this field".</li>
+            <li>Type an email without <code>@</code>: the browser says the email is invalid.</li>
+            <li>Type 1 letter in Name: <code>minlength</code> blocks the form.</li>
+            <li>Try age 10 or 150: <code>min</code> and <code>max</code> block the form.</li>
+            <li>Try to type more than 200 characters in Message: <code>maxlength</code> stops you.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>Assignment 4 &middot; Student: Nurzhan Aisu &middot; Group: SE-2530 &middot; Astana IT University</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
