@@ -17,12 +17,16 @@
       </button>
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="task0-contact.html">Task 0</a></li><li class="nav-item"><a class="nav-link" href="task1-validation.html">Task 1</a></li><li class="nav-item"><a class="nav-link" href="task2-bootstrap.html">Task 2</a></li><li class="nav-item"><a class="nav-link active" href="task3-feedback.html">Task 3</a></li><li class="nav-item"><a class="nav-link" href="task4-registration.html">Task 4</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="task0-contact.html">Task 0</a></li>
+          <li class="nav-item"><a class="nav-link" href="task1-validation.html">Task 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="task2-bootstrap.html">Task 2</a></li>
+          <li class="nav-item"><a class="nav-link active" href="task3-feedback.html">Task 3</a></li>
+          <li class="nav-item"><a class="nav-link" href="task4-registration.html">Task 4</a></li>
         </ul>
       </div>
     </div>
   </nav>
-
   <header class="page-header">
     <div class="container">
       <h1>Task 3. Bootstrap Validation Styles</h1>
@@ -33,44 +37,42 @@
   <main class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
+
         <div class="form-card">
           <h3 class="mb-4">Contact Form with Validation Feedback</h3>
-          <form action="#" method="post">
+
+          <form action="#" method="post" class="was-validated">
             <div class="row g-3">
 
-              <div class="col-md-6">
+              <div class="col-12">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control is-valid" id="name" value="John Doe" required>
+                <input type="text" class="form-control" id="name" placeholder="John Doe" required minlength="2">
                 <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Name is required (at least 2 characters).</div>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-12">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control is-invalid" id="email" value="john.example.com" required>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">Please enter a valid email address.</div>
               </div>
 
               <div class="col-12">
                 <label for="message" class="form-label">Message</label>
-                <textarea class="form-control is-invalid" id="message" rows="4" required></textarea>
-                <div class="invalid-feedback">Message is required.</div>
+                <textarea class="form-control" id="message" rows="4" placeholder="Write your message" required minlength="10"></textarea>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Message is required (at least 10 characters).</div>
               </div>
 
               <div class="col-12">
                 <button type="submit" class="btn btn-main">Submit</button>
               </div>
+
             </div>
           </form>
         </div>
 
-        <div class="form-card">
-          <h5>Explanation</h5>
-          <ul class="mb-0">
-            <li><code>is-valid</code> + <code>valid-feedback</code>: green border and a success message.</li>
-            <li><code>is-invalid</code> + <code>invalid-feedback</code>: red border and an error message.</li>
-            <li>The <code>required</code> attribute also makes the browser check the form on Submit.</li>
-          </ul>
-        </div>
       </div>
     </div>
   </main>
